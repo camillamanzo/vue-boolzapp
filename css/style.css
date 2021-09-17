@@ -1,0 +1,9 @@
+.my_green-bg{
+    height: 100px;
+    background-color: rgb(0, 133, 93);
+}
+
+.my_grey-bg{
+    height: calc(100vh - 100px);
+    background-color: rgb(189, 189, 189);
+}
