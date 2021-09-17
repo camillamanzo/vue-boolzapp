@@ -10,18 +10,22 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
-    <title>To do list.</title>
+    <title>BoolzApp</title>
 </head>
 
 <body>
     <main>
+        <!-- Background fluid-conainer -->
         <div class="container-fluid position-absolute">
             <div class="my_green-bg"></div>
             <div class="my_grey-bg"></div>
         </div>
+        <!-- Front conainer -->
         <div id="app" class="container">
             <div class="row">
+                <!-- Message list section -->
                 <section id="user-section" class="col-4 p-0">
+                    <!-- Header -->
                     <div class="header clearfix p-1">
                         <div class="float-start p-1">
                             <img src="./img 3/avatar_6.jpg" alt="">
@@ -33,24 +37,40 @@
                             <i class="fas fa-ellipsis-v px-3"></i>
                         </div>
                     </div>
+                    <!-- Notifications section -->
                     <div id="notifications" class="clearfix">
                         <div class="float-start m-3">
                             <i id="white-round-bg" class="fas fa-bell-slash"></i>
                         </div>
                         <div class="float-start pt-3">
                             <p class="m-0 pt-1 my_small-text">Ricevi notifiche di nuovi messaggi</p>
-                            <p class="text-decoration-underline my_smaller-text">Attiva notifiche desktop</p>
+                            <p class="text-decoration-underline my_text-grey my_smaller-text">Attiva notifiche desktop</p>
                         </div>
                     </div>
-                    <div id="my_input-bar">
-                        <input type="text" placeholder="Crea o inizia una nuova chat">
+                    <!-- Inputbar section -->
+                    <div id="my_input-bar" class="p-1">
+                        <div id="my_smaller-input-bar">
+                            <span><i class="fas fa-search my_text-grey px-4"></i></span>
+                            <input id="my_bar" class="border-0 my_smaller-text p-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                        </div>
                     </div>
+                    <!-- Received messages section -->
                     <div id="messages-received">
-                        <ul>
-                            <li></li>
+                        <ul class="p-0">
+                            <li v-for="(element, index) in myContacts" class="clearfix">
+                                <div class="float-start p-3">
+                                    <img :src="addImages(index)">
+                                </div>
+                                <div class="float-start pt-3">
+                                    <p>{{ element.name }}</p>
+                                    <p class="my_text-grey"></p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
+
                 </section>
+                <!-- Messages section -->
                 <section id="messages-section" class="col-8">
 
                 </section>
