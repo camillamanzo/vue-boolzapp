@@ -96,9 +96,14 @@ let app = new Vue(
         addImages: function (imgAvatar){
             return "./img 3/avatar" + this.contacts[imgAvatar].avatar + ".jpg";
         },
-
+        // Function that changes messages based on the clicked person.
         selectedContact: function (index){
             this.indexContacts = index;
+        },
+
+        lastSeen: function (){
+            let lastMessage = this.contacts[this.indexContacts].messages[this.contacts[this.indexContacts].messages.length - 1].date;
+            return lastMessage;
         }
     }
 })
