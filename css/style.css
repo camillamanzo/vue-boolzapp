@@ -3,6 +3,10 @@ img{
    border-radius: 50%;
 }
 
+.container{
+    width: 80%;
+}
+
 .my_green-bg{
     height: 100px;
     background-color: rgb(0, 133, 93);
@@ -14,7 +18,7 @@ img{
 }
 
 .my_smaller-text{
-    font-size: x-small;
+    font-size: 8px;
 }
 
 .my_small-text{
@@ -22,12 +26,33 @@ img{
 }
 
 .my_text-grey{
-    color: grey;
+    color: rgb(150, 150, 150);
 }
 
 .header{
     background-color: rgb(228, 228, 228);
+    border-right: 1px solid rgb(197, 197, 197);
+    height: 55px;
     
+}
+
+.sent-messages{
+    float: right;
+    background-color: rgb(148, 245, 148);
+    width: 40%;
+    margin: 5px 40px;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.received-messages{
+    float: left;
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    margin: 5px 40px;
+    padding: 5px 10px;
+    border-radius: 10px;
+
 }
 
 #app{
@@ -50,7 +75,8 @@ img{
 
 }
 
-#my_input-bar{
+#my_input-bar,
+#my_input-bar-2{
     background-color: rgb(248, 248, 248);
 }
 
@@ -58,18 +84,30 @@ img{
     background-color: white;
 }
 
-#my_bar{
-    width: 80%;
+#my_bar,
+#my_bar-2{
+    width: 70%;
 }
 
 #my_smaller-input-bar i{
-    color: rgb(201, 201, 201);
+    color: rgb(146, 146, 146);
     font-size: small;
 }
 
 #messages-received>ul>li{
     list-style-type: none;
     border-bottom:  1px solid rgb(228, 228, 228);
+}
+
+#my_jumbo{
+    height: calc(100vh - 167px);
+    background-image: url(../img\ 3/mine.jpg);
+    padding: 40px;
+}
+
+#my_bar-2{
+    height: 40px;
+    border-radius: 5px;
 }
 
 
