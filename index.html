@@ -57,11 +57,10 @@
                     <!-- Received messages section  -->
                     <div id="messages-received">
                         <ul class="p-0">
-                            <li v-for="(element, index) in contacts" :class="{'active' : index == indexContacts}" @click="selectedContact(index)" class="clearfix">
+                            <li v-for="(element, index) in contacts" v-for='message in contacts[indexContacts].messages' :class="{'active' : index == indexContacts}" @click="selectedContact(index)" class="clearfix">
                                 <div class="float-start p-2">
                                     <img :src="addImages(index)">
                                 </div>
-                                <!-- v-for='message in contacts[indexContacts].messages' -->
                                 <div class="float-start pt-2" >
                                     <p>{{ element.name }}</p>
                                     <!-- <p class="my_text-grey my_smaller-text float-start">{{ message.text }}</p> -->
@@ -77,10 +76,10 @@
 
                     <div class="header clearfix p-1">
                         <div class="float-start p-1">
-                            <!-- <img :src="addImages(index)"> -->
-                            <div class="float-start pt-2">
+                            <img class="float-start mx-3" :src="addImages(indexContacts)">
+                            <div class="float-start mx-2">
                                 <p class="m-0 p-0">{{ contacts[indexContacts].name }}</p>
-                                <p></p>
+                                <p class="my_text-grey my_smaller-text">Ultimo accesso alle {{ lastSeen() }}<span></span></p>
                             </div>
                         </div>
                         <div class="float-end">
@@ -92,16 +91,16 @@
 
                     <div id="my_jumbo">
                         <div class="clearfix" :class="(message.status == 'sent') ? 'sent-messages' : 'received-messages'" v-for='message in contacts[indexContacts].messages'>
-                            <div class="my_small-text">{{ message.text }}</div>
-                            <p class="my_text-grey my_smaller-text float-end p-0 m-1">{{ message.date }}</p>
+                            <div class="my_small-text p-0 m-0">{{ message.text }}</div>
+                            <p class="my_text-grey my_smaller-text float-end p-0 m-0">{{ message.date }}</p>
                         </div>
                     </div>
 
                     <div id="my_input-bar-2" class="p-3">
                         <div>
-                            <span><i class="far fa-smile my_text-grey px-4"></i></span>
-                            <input id="my_bar-2" class="border-0 my_small-text px-2" type="text" placeholder="Scrivi un messaggio">
-                            <span><i class="fas fa-microphone my_text-grey px-4"></i></span>
+                            <span><i class="far fa-smile my_text-grey px-3"></i></span>
+                            <input id="my_bar-2" class="border-0 my_small-text px-2 mx-4" type="text" v-model="newMessage" @keyup.enter="newArrayElement" placeholder="Scrivi un messaggio">
+                            <span><i class="fas fa-microphone my_text-grey px-3"></i></span>
                         </div>
                     </div>
 
