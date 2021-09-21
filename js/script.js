@@ -91,6 +91,7 @@ let app = new Vue(
         ],
         indexContacts: 0,
         newMessage: "",
+        searchName: "",
     
     },
     methods: {
@@ -141,7 +142,12 @@ let app = new Vue(
                     newObject.push(newReceivedMessage)
                 },1000)
             }
-        }
+        },
+
+        // Function that finds searched names.
+        searchNames: function(element){
+            return element.name.toLowerCase().includes(this.searchName.toLowerCase())
+        },
 
         
     }

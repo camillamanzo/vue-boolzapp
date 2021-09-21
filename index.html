@@ -51,20 +51,18 @@
                     <div id="my_input-bar" class="p-1">
                         <div id="my_smaller-input-bar">
                             <span><i class="fas fa-search my_text-grey px-4"></i></span>
-                            <input id="my_bar" class="border-0 my_smaller-text p-1" type="text" placeholder="Cerca o inizia una nuova chat">
+                            <input id="my_bar" class="border-0 my_smaller-text p-1" type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchName" @keyup.enter="searchNames()">
                         </div>
                     </div> 
                     <!-- Received messages section  -->
                     <div id="messages-received">
                         <ul class="p-0">
-                            <li v-for="(element, index) in contacts" v-for='message in contacts[indexContacts].messages' :class="{'active' : index == indexContacts}" @click="selectedContact(index)" class="clearfix">
+                            <li v-for="(element, index) in contacts" v-if="searchNames(element)" :class="{'active' : index == indexContacts}" @click="selectedContact(index)" class="clearfix">
                                 <div class="float-start p-2">
                                     <img :src="addImages(index)">
                                 </div>
                                 <div class="float-start pt-2" >
                                     <p>{{ element.name }}</p>
-                                    <!-- <p class="my_text-grey my_smaller-text float-start">{{ message.text }}</p> -->
-                                    <!-- <p class="my_text-grey my_smaller-text float-end">{{ message.date }}</p> -->
                                 </div>
                             </li>
                         </ul>
