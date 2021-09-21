@@ -110,4 +110,10 @@ img{
     border-radius: 5px;
 }
 
+#my_bar:focus,
+#my_bar-2:focus{
+    border: 0;
+    outline: none;
+}
+
 
