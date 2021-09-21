@@ -120,7 +120,7 @@ let app = new Vue(
         },
 
         //Function that pushes new object in current object's array.
-        newArrayElement: function(){
+        newArrayElement: function(newObject){
             let newSentMessage = {
                 date: this.newMessageDate(),
                 text: this.newMessage,
@@ -138,7 +138,7 @@ let app = new Vue(
                 this.newMessage = "";
 
                 setTimeout(function(){
-                    this.contacts[this.indexContacts].messages.push(newReceivedMessage)
+                    newObject.push(newReceivedMessage)
                 },1000)
             }
         }

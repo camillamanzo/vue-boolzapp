@@ -99,7 +99,7 @@
                     <div id="my_input-bar-2" class="p-3">
                         <div>
                             <span><i class="far fa-smile my_text-grey px-3"></i></span>
-                            <input id="my_bar-2" class="border-0 my_small-text px-2 mx-4" type="text" v-model="newMessage" @keyup.enter="newArrayElement" placeholder="Scrivi un messaggio">
+                            <input id="my_bar-2" class="border-0 my_small-text px-2 mx-4" type="text" v-model="newMessage" @keyup.enter="newArrayElement(contacts[indexContacts].messages)" placeholder="Scrivi un messaggio">
                             <span><i class="fas fa-microphone my_text-grey px-3"></i></span>
                         </div>
                     </div>
